@@ -4,14 +4,14 @@
 @import "modules/hello.scss";
 
 :root {
-  --main-padding:16px;
-  --main-radius:10px;
-  --main-color:#274C77;
-  --main-margin:30px;
+  --main-padding: 16px;
+  --main-radius: 10px;
+  --main-color: #274c77;
+  --main-margin: 30px;
 }
 
 body {
-  background: #8B8C89;
+  background: #8b8c89;
   display: flex;
   justify-content: center;
   min-height: 100vh;
@@ -20,19 +20,18 @@ body {
 }
 
 .button {
-  background: #A3CEF1;
+  background: #a3cef1;
   padding: var(--main-padding);
   border: 0;
   border-radius: var(--main-radius);
   font-weight: bold;
-  color:var(--main-color);
+  color: var(--main-color);
 }
 
 .button__1 {
-  background: #6096BA;
+  background: #6096ba;
   margin-left: 6px;
 }
-
 
 .form__button {
   display: flex;
@@ -40,14 +39,14 @@ body {
 }
 
 .form__content {
-  background: #E7ECEF;
+  background: #e7ecef;
   height: 250px;
   width: 80vw;
   border-radius: var(--main-radius);
   color: black;
   padding: var(--main-padding);
   margin: var(--main-margin) 0px;
-  border: var(--main-color) 2px dashed;
+  border: var(--main-color) 1px dashed;
 }
 
 .history {
@@ -60,9 +59,15 @@ body {
   margin: var(--main-margin) 0px;
 }
 
-.date {
-  border-radius: 5px;
-  border:0;
-  padding:0px var(--main-padding);
+.main__heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
 }
 
+.date {
+  border-radius: 5px;
+  border: 0;
+  font-size: small;
+  color: var(--main-color);
+}
