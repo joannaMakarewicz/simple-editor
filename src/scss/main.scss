@@ -3,40 +3,66 @@
 @import "_variables";
 @import "modules/hello.scss";
 
+:root {
+  --main-padding:16px;
+  --main-radius:10px;
+  --main-color:#274C77;
+  --main-margin:30px;
+}
+
 body {
-  background: red;
-  color: #fff;
+  background: #8B8C89;
   display: flex;
-  align-items: center;
   justify-content: center;
   min-height: 100vh;
-  font-family:Arial, Helvetica, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+}
+
+.button {
+  background: #A3CEF1;
+  padding: var(--main-padding);
+  border: 0;
+  border-radius: var(--main-radius);
+  font-weight: bold;
+  color:var(--main-color);
+}
+
+.button__1 {
+  background: #6096BA;
+  margin-left: 6px;
 }
 
 
 .form__button {
-    display:flex;
-    justify-content:flex-end;
-  }
+  display: flex;
+  justify-content: flex-end;
+}
+
 .form__content {
-    background:white;
-    min-height: 300px;
-    min-width: 400px;
-    border-radius:16px;
-    color:black;
-    padding:16px;
-  }
-
-
-.button1 {
-  background:#8ECAE6;
-  padding:6px 16px;
+  background: #E7ECEF;
+  height: 250px;
+  width: 80vw;
+  border-radius: var(--main-radius);
+  color: black;
+  padding: var(--main-padding);
+  margin: var(--main-margin) 0px;
+  border: var(--main-color) 2px dashed;
 }
 
-.button2 {
-  background:#02b82f;
-  margin-left:6px;
-  padding:6px 16px;
+.history {
+  color: var(--main-color);
+  margin: var(--main-margin) 0px;
 }
 
+.main__header {
+  color: var(--main-color);
+  margin: var(--main-margin) 0px;
+}
+
+.date {
+  border-radius: 5px;
+  border:0;
+  padding:0px var(--main-padding);
+}
 

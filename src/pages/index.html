@@ -1,23 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My editor</title>
   </head>
   <body>
     <main class="main">
       <header>
-        <h1 class="main__header">My editor</h1>
+        <h1 class="main__header">Moje notatki</h1>
       </header>
       <form class="form">
-      <textarea aria-label="textarea" id="text" class="form__content textarea--js" placeholder="Lorem ipsum lorem ipsum"></textarea>
-      <div class="form__button">
-        <button class="button1 load--js">load</button>
-        <button class="button2 save--js">save</button>
-      </div>
-    </form>
+        <p class="form__sign">
+          <label
+            ><input
+              class="date date--js"
+              id="date"
+              type="datetime-local"
+          ></label>
+        </p>
+        <textarea
+          aria-label="textarea"
+          id="text"
+          class="form__content textarea--js"
+          placeholder="Lorem ipsum lorem ipsum"
+        ></textarea>
+
+        <div class="form__button">
+          <button class="button load--js">load</button>
+          <button class="button button__1 save--js">save</button>
+        </div>
+      </form>
+      <section>
+        <h2 class="history">Historia wpisów</h2>
+        <ul>
+          <li></li>
+        </ul>
+      </section>
     </main>
   </body>
 </html>
