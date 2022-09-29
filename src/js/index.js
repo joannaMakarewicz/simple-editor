@@ -17,12 +17,17 @@ const load = document.querySelector(".load--js");
 const historyDate = document.querySelector(".history__date--js");
 const historyContent = document.querySelector(".history__content--js");
 
+
+historyDate.innerHTML = localStorage.getItem("date");
+historyContent.innerHTML = localStorage.getItem("information");
+
 save.addEventListener("click", (e) => {
   e.preventDefault();
   localStorage.setItem("information", textarea.value);
   localStorage.setItem("date", mainDate);
   historyDate.innerHTML = localStorage.getItem("date");
   historyContent.innerHTML = localStorage.getItem("information");
+
 });
 
 load.addEventListener("click", (e) => {
