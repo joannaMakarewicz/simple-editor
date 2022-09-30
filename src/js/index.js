@@ -14,20 +14,34 @@ dateTemporary.innerHTML = mainDate;
 const textarea = document.querySelector(".textarea--js");
 const save = document.querySelector(".save--js");
 const load = document.querySelector(".load--js");
-const historyDate = document.querySelector(".history__date--js");
-const historyContent = document.querySelector(".history__content--js");
+const history = document.querySelector(".history__area--js");
 
+const dateFromLocalTable=JSON.parse(localStorage.getItem('actualDate'));
+const informationFromLocalTable=JSON.parse(localStorage.getItem('actualInformation'));
 
-historyDate.innerHTML = localStorage.getItem("date");
-historyContent.innerHTML = localStorage.getItem("information");
+const tableDate = [dateFromLocalTable];
+const tableInformation = [informationFromLocalTable];
+
+console.log(tableDate);
+console.log(tableInformation);
+
+if (dateFromLocalTable && informationFromLocalTable) {
+  history.innerHTML += `<li>${tableDate} ${tableInformation}</li>`;
+} else {
+  history.innerHTML = "";
+}
 
 save.addEventListener("click", (e) => {
-  e.preventDefault();
-  localStorage.setItem("information", textarea.value);
-  localStorage.setItem("date", mainDate);
-  historyDate.innerHTML = localStorage.getItem("date");
-  historyContent.innerHTML = localStorage.getItem("information");
-
+const newInformation = localStorage.setItem("information", textarea.value);
+const newData = localStorage.setItem("date", mainDate );
+const newDateToUse=localStorage.getItem('date');
+const newInformationToUse=localStorage.getItem('information');
+tableDate.push(newDateToUse);
+tableInformation.push(newInformationToUse);
+console.log(tableDate);
+console.log(tableInformation);
+const newDateForLocalTable=localStorage.setItem('actualDate', JSON.stringify(tableDate));
+const newInformationForLocalTable=localStorage.setItem('actualInformation', JSON.stringify(tableInformation));
 });
 
 load.addEventListener("click", (e) => {
