@@ -54,9 +54,10 @@ body {
   margin: var(--main-margin) 0px;
 }
 
-.history__date {
-  font-size: small;
-  font-weight: bold;
+.history__area {
+  list-style:none;
+  width: 80vw;
+  padding:0;
 }
 
 .main__header {
@@ -79,4 +80,6 @@ body {
 
 .special {
   margin:16px 0px;
+  font-weight:bold;
+  font-size:small;
 }
