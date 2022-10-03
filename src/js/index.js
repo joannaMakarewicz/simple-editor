@@ -26,7 +26,7 @@ console.log(tableDate);
 console.log(tableInformation);
 
 if (dateFromLocalTable && informationFromLocalTable) {
-  history.innerHTML += `<li>${tableDate} ${tableInformation}</li>`;
+  history.innerHTML += `<li class="special">${tableDate}</li> <li>${tableInformation}</li>`;
 } else {
   history.innerHTML = "";
 }
@@ -36,8 +36,8 @@ const newInformation = localStorage.setItem("information", textarea.value);
 const newData = localStorage.setItem("date", mainDate );
 const newDateToUse=localStorage.getItem('date');
 const newInformationToUse=localStorage.getItem('information');
-tableDate.push(newDateToUse);
-tableInformation.push(newInformationToUse);
+tableDate.unshift(newDateToUse);
+tableInformation.unshift(newInformationToUse);
 console.log(tableDate);
 console.log(tableInformation);
 const newDateForLocalTable=localStorage.setItem('actualDate', JSON.stringify(tableDate));

@@ -54,9 +54,10 @@ body {
   margin: var(--main-margin) 0px;
 }
 
-.history__date {
-  font-size: small;
-  font-weight: bold;
+.history__area {
+  list-style:none;
+  width: 80vw;
+  line-height: 1.5;
 }
 
 .main__header {
@@ -75,4 +76,9 @@ body {
   border: 0;
   font-size: small;
   color: var(--main-color);
+}
+
+.special {
+  font-weight:bold;
+  font-size:small;
 }
