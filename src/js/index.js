@@ -14,7 +14,8 @@ dateTemporary.innerHTML = mainDate;
 const textarea = document.querySelector(".textarea--js");
 const save = document.querySelector(".save--js");
 const load = document.querySelector(".load--js");
-const history = document.querySelector(".history__area--js");
+const historyDate = document.querySelector(".history__date--js");
+const historyInformation = document.querySelector(".history__information--js");
 
 const dateFromLocalTable=JSON.parse(localStorage.getItem('actualDate'));
 const informationFromLocalTable=JSON.parse(localStorage.getItem('actualInformation'));
@@ -25,11 +26,12 @@ const tableInformation = [informationFromLocalTable];
 console.log(tableDate);
 console.log(tableInformation);
 
-if (dateFromLocalTable && informationFromLocalTable) {
-  history.innerHTML += `<li class="special">${tableDate}</li> <li>${tableInformation}</li>`;
-} else {
-  history.innerHTML = "";
-}
+for (let i=0; i<tableDate.length;i++){
+  historyDate.innerHTML =tableDate; 
+  historyInformation.innerHTML =tableInformation;
+};
+
+
 
 save.addEventListener("click", (e) => {
 const newInformation = localStorage.setItem("information", textarea.value);
