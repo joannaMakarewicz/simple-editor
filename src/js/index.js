@@ -21,12 +21,12 @@ const informationFromLocalTable = JSON.parse(
 );
 
 
-const tableInformation = [informationFromLocalTable];
+const tableInformation = [];
 
 if(informationFromLocalTable!=null){
-console.log(tableInformation);
-for(let i=0;i<tableInformation.length; i++){
-historyInformation.innerHTML+=`<p>${tableInformation[i]}</p>`};}
+console.log(informationFromLocalTable);
+for(let i=0;i<informationFromLocalTable.length; i++){
+historyInformation.innerHTML+=`<p>${informationFromLocalTable[i]}</p>`};}
 else{
     console.log(`Brak wpisów`);
     historyInformation.innerHTML=`Brak wpisów`;
