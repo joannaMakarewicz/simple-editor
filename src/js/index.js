@@ -14,36 +14,43 @@ dateTemporary.innerHTML = mainDate;
 const textarea = document.querySelector(".textarea--js");
 const save = document.querySelector(".save--js");
 const load = document.querySelector(".load--js");
-const historyDate = document.querySelector(".history__date--js");
 const historyInformation = document.querySelector(".history__information--js");
 
-const dateFromLocalTable=JSON.parse(localStorage.getItem('actualDate'));
-const informationFromLocalTable=JSON.parse(localStorage.getItem('actualInformation'));
+const informationFromLocalTable = JSON.parse(
+  localStorage.getItem("actualInformation")
+);
 
-const tableDate = [dateFromLocalTable];
+
 const tableInformation = [informationFromLocalTable];
 
-console.log(tableDate);
+if(informationFromLocalTable!=null){
 console.log(tableInformation);
+for(let i=0;i<tableInformation.length; i++){
+historyInformation.innerHTML+=`<p>${tableInformation[i]}</p>`};}
+else{
+    console.log(`Brak wpisów`);
+    historyInformation.innerHTML=`Brak wpisów`;
+}
 
-for (let i=0; i<tableDate.length;i++){
-  historyDate.innerHTML =tableDate; 
-  historyInformation.innerHTML =tableInformation;
-};
 
+ 
 
 
 save.addEventListener("click", (e) => {
-const newInformation = localStorage.setItem("information", textarea.value);
-const newData = localStorage.setItem("date", mainDate );
-const newDateToUse=localStorage.getItem('date');
-const newInformationToUse=localStorage.getItem('information');
-tableDate.unshift(newDateToUse);
-tableInformation.unshift(newInformationToUse);
-console.log(tableDate);
-console.log(tableInformation);
-const newDateForLocalTable=localStorage.setItem('actualDate', JSON.stringify(tableDate));
-const newInformationForLocalTable=localStorage.setItem('actualInformation', JSON.stringify(tableInformation));
+  e.preventDefault();
+  const newInformation = localStorage.setItem("information", textarea.value);
+  const newInformationToUse = localStorage.getItem("information");
+  tableInformation.push(newInformationToUse);
+  console.log(tableInformation);
+
+  for (let i = tableInformation.length - 1; i < tableInformation.length; i++) {
+    historyInformation.innerHTML += `<p>${tableInformation[i]}</p>`;
+  }
+
+  const tableForUse = localStorage.setItem(
+    "actualInformation",
+    JSON.stringify(tableInformation)
+  );
 });
 
 load.addEventListener("click", (e) => {
