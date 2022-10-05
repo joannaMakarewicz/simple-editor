@@ -20,32 +20,28 @@ const informationFromLocalTable = JSON.parse(
   localStorage.getItem("actualInformation")
 );
 
+const tableInformation = [];
 
-const tableInformation=[];
-
-
-if(informationFromLocalTable){
-console.log(informationFromLocalTable);
-for(let i=0;i<informationFromLocalTable.length; i++){
-historyInformation.innerHTML+=`<p>${informationFromLocalTable[i]}</p>`};
+if (informationFromLocalTable) {
+  console.log(informationFromLocalTable);
+  for (let i = 0; i < informationFromLocalTable.length; i++) {
+    historyInformation.innerHTML += `<p>${informationFromLocalTable[i]}</p>`;
+  }
+} else {
+  console.log(`Brak wpisów`);
+  historyInformation.innerHTML = `Brak wpisów`;
 }
-else{
-    console.log(`Brak wpisów`);
-    historyInformation.innerHTML=`Brak wpisów`;
-}
-
 
 save.addEventListener("click", (e) => {
   e.preventDefault();
   const newInformation = localStorage.setItem("information", textarea.value);
   const newInformationToUse = localStorage.getItem("information");
-const newData=JSON.parse(localStorage.getItem("actualInformation"));
+  const newData = JSON.parse(localStorage.getItem("actualInformation"));
 
   tableInformation.unshift(newInformationToUse);
   console.log(tableInformation);
-  
 
- const tableForUse = localStorage.setItem(
+  const tableForUse = localStorage.setItem(
     "actualInformation",
     JSON.stringify(tableInformation)
   );
@@ -53,8 +49,6 @@ const newData=JSON.parse(localStorage.getItem("actualInformation"));
   for (let i = 0; i < 1; i++) {
     historyInformation.innerHTML += `<p>${tableInformation[i]}</p>`;
   }
-
- 
 });
 
 load.addEventListener("click", (e) => {

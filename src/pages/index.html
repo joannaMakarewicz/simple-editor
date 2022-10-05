@@ -1,34 +1,34 @@
 <!DOCTYPE html>
 <html lang="pl">
   <head>
-    <meta charset="UTF-8" >
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Moje notatki</title>
     <meta
       property="og:title"
       content="Exit-interview: the survay of makaDesign"
-    >
+    />
     <meta
       property="og:description"
       content="The survay for the opinion of an employee who ends cooperation with the company"
-    >
+    />
     <meta
       property="og:url"
       content="https://joannamakarewicz.github.io/exit-interview-webpack/"
-    >
+    />
     <meta
       property="og:image"
       content="https://joannamakarewicz.github.io/exit-interview-webpack/exit-interview.png"
-    >
+    />
 
-    <link href="../scss/main.scss" rel="stylesheet" type="text/css">
+    <link href="../scss/main.scss" rel="stylesheet" type="text/css" />
   </head>
   <body>
+    <header class="main__heading">
+      <h1 class="main__header">Moje notatki</h1>
+      <p class="date date--js"></p>
+    </header>
     <main class="main">
-      <header class="main__heading">
-        <h1 class="main__header">Moje notatki</h1>
-        <p class="date date--js"></p>
-      </header>
       <form class="form">
         <textarea
           aria-label="textarea"
@@ -38,17 +38,19 @@
         ></textarea>
 
         <div class="form__button">
-          <button class="button load--js">Dokończ wpis</button>
-          <button class="button button__1 save--js">Zapisz</button>
+          <button class="button load--js">Dokończ</button>
+          <button class="button save--js">Zapisz</button>
         </div>
       </form>
-      <section>
-      <h2 class="history">Historia wpisów</h2>
-      <ul class="history__list">
-        <li class="history__information history__information--js"></li>
-      </ul>
-
-    </section>
+      <section class="history">
+        <h2 class="history__area">Historia wpisów</h2>
+        <ul class="history__list">
+          <li class="history__information history__information--js"></li>
+        </ul>
+      </section>
     </main>
+    <footer>
+      <p class="footer">© 2022 makaDesign</p>
+    </footer>
   </body>
 </html>
