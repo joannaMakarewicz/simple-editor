@@ -21,36 +21,40 @@ const informationFromLocalTable = JSON.parse(
 );
 
 
-const tableInformation = [];
+const tableInformation=[];
 
-if(informationFromLocalTable!=null){
+
+if(informationFromLocalTable){
 console.log(informationFromLocalTable);
 for(let i=0;i<informationFromLocalTable.length; i++){
-historyInformation.innerHTML+=`<p>${informationFromLocalTable[i]}</p>`};}
+historyInformation.innerHTML+=`<p>${informationFromLocalTable[i]}</p>`};
+}
 else{
     console.log(`Brak wpisów`);
     historyInformation.innerHTML=`Brak wpisów`;
 }
 
 
- 
-
-
 save.addEventListener("click", (e) => {
   e.preventDefault();
   const newInformation = localStorage.setItem("information", textarea.value);
   const newInformationToUse = localStorage.getItem("information");
-  tableInformation.push(newInformationToUse);
+const newData=JSON.parse(localStorage.getItem("actualInformation"));
+
+  tableInformation.unshift(newInformationToUse);
   console.log(tableInformation);
+  
 
-  for (let i = tableInformation.length - 1; i < tableInformation.length; i++) {
-    historyInformation.innerHTML += `<p>${tableInformation[i]}</p>`;
-  }
-
-  const tableForUse = localStorage.setItem(
+ const tableForUse = localStorage.setItem(
     "actualInformation",
     JSON.stringify(tableInformation)
   );
+
+  for (let i = 0; i < 1; i++) {
+    historyInformation.innerHTML += `<p>${tableInformation[i]}</p>`;
+  }
+
+ 
 });
 
 load.addEventListener("click", (e) => {
