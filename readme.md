@@ -14,7 +14,7 @@ The project consists of three functionalities:
 
 ### Languages used to build Project:
 
-HTML
-CSS
-SCSS
-JS.
+- HTML
+- CSS
+- SCSS
+- JS.
