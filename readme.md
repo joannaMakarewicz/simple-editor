@@ -7,9 +7,9 @@ You can check this Project here: https://joannamakarewicz.github.io/simple-edito
 
 ## Contents
 The project consists of three functionalities:
--Text area for adding new notes - you can save note with a particular button.
--Button for loading your previous note in a textarea - you can change that note or put additional information.
--History area - you can check all notes putting into archive with their date.
+- Text area for adding new notes - you can save note with a particular button.
+- Button for loading your previous note in a textarea - you can change that note or put additional information.
+- History area - you can check all notes putting into archive with their date.
 
 
 ### Languages used to build Project:
