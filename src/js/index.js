@@ -16,40 +16,24 @@ const save = document.querySelector(".save--js");
 const load = document.querySelector(".load--js");
 const historyInformation = document.querySelector(".history__information--js");
 
-const informationFromLocalTable = JSON.parse(
-  localStorage.getItem("actualInformation")
-);
 
-const tableInformation = [];
 
-if (informationFromLocalTable) {
-  console.log(informationFromLocalTable);
-  for (let i = 0; i < informationFromLocalTable.length; i++) {
-    historyInformation.innerHTML += `<p>${informationFromLocalTable[i]}</p>`;
-  }
-} else {
-  console.log(`Brak wpisów`);
-  historyInformation.innerHTML = `Brak wpisów`;
+let tableInformation = [];
+console.log(tableInformation);
+
+if(informationFromLocalTable){
+for (let element of tableInformation){
+  historyInformation.innerHTML+=`<li>${element}</li>`}}else{
+  historyInformation.innerHTML=`Brak wpisów`;
 }
 
 save.addEventListener("click", (e) => {
   e.preventDefault();
-  const newInformation = localStorage.setItem("information", textarea.value);
-  const newInformationToUse = localStorage.getItem("information");
-  const newData = JSON.parse(localStorage.getItem("actualInformation"));
-
-  tableInformation.unshift(newInformationToUse);
+  tableInformation.unshift(textarea.value);
   console.log(tableInformation);
 
-  const tableForUse = localStorage.setItem(
-    "actualInformation",
-    JSON.stringify(tableInformation)
-  );
-
-  for (let i = 0; i < 1; i++) {
-    historyInformation.innerHTML += `<p>${tableInformation[i]}</p>`;
   }
-});
+)
 
 load.addEventListener("click", (e) => {
   e.preventDefault();
