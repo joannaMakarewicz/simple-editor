@@ -29,6 +29,7 @@ myDate();
 const save = document.querySelector(".save--js");
 const myData = document.querySelector(".form__content--js");
 const myHistory = document.querySelector(".history__container--js");
+const myHistoryInfo = document.querySelector(".history__info--js");
 
 //check if sth is in localStorage and put into textarea if true:
 if (localStorage.getItem("myTextarea") !== null) {
@@ -39,16 +40,14 @@ myData.addEventListener("input", (e) => {
 });
 
 if(localStorage.getItem("wholeHistory") !== null) {
-myHistory.style.display='grid';
 myHistory.innerHTML = localStorage.getItem("wholeHistory");
 }else{
-  myHistory.style.display='block';
-  myHistory.innerHTML='There are no avaible history'
+  myHistoryInfo.innerHTML='There are no available history'
 }
 
 save.addEventListener("click", (e) => {
   e.preventDefault();
-  
+  myHistoryInfo.innerHTML="";
   const actualHistory = 
   `<img class="history__edit" src="../src/assets/icons/edit.svg" />
   <img class="history__reset" src="../src/assets/icons/reset.svg" />
