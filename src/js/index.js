@@ -38,13 +38,20 @@ myData.addEventListener("input", (e) => {
   localStorage.setItem("myTextarea", myData.value);
 });
 
-
+if(localStorage.getItem("wholeHistory") !== null) {
+myHistory.style.display='grid';
 myHistory.innerHTML = localStorage.getItem("wholeHistory");
-
+}else{
+  myHistory.style.display='block';
+  myHistory.innerHTML='There are no avaible history'
+}
 
 save.addEventListener("click", (e) => {
   e.preventDefault();
-  const actualHistory = `<img class="history__edit" src="../src/assets/icons/edit.svg" />
+  
+  const actualHistory = 
+  `<img class="history__edit" src="../src/assets/icons/edit.svg" />
+  <img class="history__reset" src="../src/assets/icons/reset.svg" />
   <ul class="history__list history__list--js">
   <li class="history__information"><p class="history__information--date">${space.textContent}</p>${myData.value}</li></ul>`;
   myHistory.innerHTML += actualHistory;
