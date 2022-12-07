@@ -105,7 +105,7 @@ body {
   opacity: 0.5;
 }
 
-.history__container {
+.history__secondContainer {
   display:grid;
   grid-template-columns: 40px 40px 1fr;
 }
@@ -122,29 +122,33 @@ body {
 .history__edit {
   left: 20%;
   position:relative;
-  top:30%;
+  top:55%;
   width: 25px;
 }
 
-.history__information {
-  list-style: none;
-  width: 80vw;
-  &--date {
-    font-weight: 700;
+.history__date {
+  font-weight: 700;
+  margin:0;
+  padding:var(--main-padding);
   }
+
+.history__information {
+  grid-area: 2/3/3/4;
+  margin: 0;
+  padding-bottom: var(--main-padding);
+  padding-left: var(--main-padding);
 }
 
-.history__list {
-  border-bottom: 1px solid red;
-  margin: 0;
-  padding: var(--main-padding);
-  padding-top: 0;
+.history__secondContainer {
+  border-top: 1px solid red;
+  width:90vw;
+  margin:0 auto;
 }
 
 .history__reset {
   left: 20%;
   position:relative;
-  top:30%;
+  top:55%;
   width: 25px;
 }
 

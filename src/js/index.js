@@ -49,10 +49,24 @@ save.addEventListener("click", (e) => {
   e.preventDefault();
   myHistoryInfo.innerHTML="";
   const actualHistory = 
-  `<img class="history__edit" src="../src/assets/icons/edit.svg" />
-  <img class="history__reset" src="../src/assets/icons/reset.svg" />
-  <ul class="history__list history__list--js">
-  <li class="history__information"><p class="history__information--date">${space.textContent}</p>${myData.value}</li></ul>`;
+  `<div class="history__secondContainer history__secondContainer--js">
+  <img class="history__edit" src="../src/assets/icons/edit.svg" />
+  <img class="history__reset history__reset--js" src="../src/assets/icons/reset.svg" />
+  <p class="history__date">${space.textContent}</p>
+  <p class="history__information">${myData.value}</p>
+  </div>`;
   myHistory.innerHTML += actualHistory;
   localStorage.setItem("wholeHistory", myHistory.innerHTML);
 });
+
+//Archive-reset:
+
+const myReset = document.querySelector(".history__reset--js");
+const secondContainer = document.querySelector(".history__secondContainer--js");
+
+myReset.addEventListener('click', ()=> {
+  console.log(this);
+})
+
+
+
