@@ -31,6 +31,7 @@ const secondContainers = document.querySelector(".history__secondContainer--js"
 );
 
 //check if sth is in localStorage and put into textarea if true:
+
 if (localStorage.getItem("myTextarea") !== null) {
   myData.value = localStorage.getItem("myTextarea");
 }
@@ -44,20 +45,22 @@ if (localStorage.getItem("wholeHistory") !== null) {
   myHistoryInfo.innerHTML = "There are no available history";
 }
 
+//use button save for archive text from textarea:
+
 save.addEventListener("click", (e) => {
   myHistoryInfo.innerHTML = "";
   const actualHistory = `<div class="history__secondContainer history__secondContainer--js">
-  <img class="history__edit" src="../src/assets/icons/edit.svg" />
+  <img class="history__edit history__edit--js" src="../src/assets/icons/edit.svg" />
   <img class="history__reset history__reset--js" src="../src/assets/icons/reset.svg" />
   <p class="history__date">${space.textContent}</p>
-  <p class="history__information">${myData.value}</p>
+  <p class="history__information history__information--js">${myData.value}</p>
   </div>`;
   myHistory.innerHTML += actualHistory;
   localStorage.setItem("wholeHistory", myHistory.innerHTML);
   localStorage.removeItem("myTextarea");
 });
 
-//Archive-reset:
+//reset single text from archive:
 const resets = document.querySelectorAll(".history__reset--js");
 
 function resetAll() {
@@ -74,3 +77,19 @@ resets.forEach((reset) => {
   reset.addEventListener("click", resetAll);
 });
 
+//edit single text from archive:
+
+const edits = document.querySelectorAll(".history__edit--js");
+
+function editAll() {
+  const textToEdit = document.querySelector(".history__information--js");
+  console.log(textToEdit.textContent);
+  myData.innerHTML=textToEdit.textContent;
+  save.addEventListener("click", (e) => {
+    
+  })
+}
+
+edits.forEach((edit) => {
+  edit.addEventListener("click", editAll);
+});
