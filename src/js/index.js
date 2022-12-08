@@ -2,10 +2,6 @@ import "../scss/main.scss";
 
 console.log("HELLO. My name is Joanna. Nice to meet you on my website. Enjoy!");
 
-// uncomment the lines below to enable PWA
-// import {registerSW} from './pwa.js';
-// registerSW();
-
 //current date&time function
 
 const space = document.querySelector(".date--js");
@@ -30,6 +26,9 @@ const save = document.querySelector(".save--js");
 const myData = document.querySelector(".form__content--js");
 const myHistory = document.querySelector(".history__container--js");
 const myHistoryInfo = document.querySelector(".history__info--js");
+const myReset = document.querySelector(".history__reset--js");
+const secondContainers = document.querySelector(".history__secondContainer--js"
+);
 
 //check if sth is in localStorage and put into textarea if true:
 if (localStorage.getItem("myTextarea") !== null) {
@@ -39,17 +38,15 @@ myData.addEventListener("input", (e) => {
   localStorage.setItem("myTextarea", myData.value);
 });
 
-if(localStorage.getItem("wholeHistory") !== null) {
-myHistory.innerHTML = localStorage.getItem("wholeHistory");
-}else{
-  myHistoryInfo.innerHTML='There are no available history'
+if (localStorage.getItem("wholeHistory") !== null) {
+  myHistory.innerHTML = localStorage.getItem("wholeHistory");
+} else {
+  myHistoryInfo.innerHTML = "There are no available history";
 }
 
 save.addEventListener("click", (e) => {
-  e.preventDefault();
-  myHistoryInfo.innerHTML="";
-  const actualHistory = 
-  `<div class="history__secondContainer history__secondContainer--js">
+  myHistoryInfo.innerHTML = "";
+  const actualHistory = `<div class="history__secondContainer history__secondContainer--js">
   <img class="history__edit" src="../src/assets/icons/edit.svg" />
   <img class="history__reset history__reset--js" src="../src/assets/icons/reset.svg" />
   <p class="history__date">${space.textContent}</p>
@@ -57,16 +54,23 @@ save.addEventListener("click", (e) => {
   </div>`;
   myHistory.innerHTML += actualHistory;
   localStorage.setItem("wholeHistory", myHistory.innerHTML);
+  localStorage.removeItem("myTextarea");
 });
 
 //Archive-reset:
+const resets = document.querySelectorAll(".history__reset--js");
 
-const myReset = document.querySelector(".history__reset--js");
-const secondContainer = document.querySelector(".history__secondContainer--js");
+function resetAll() {
+  const containerNew = document.querySelector(".history__secondContainer--js");
+  this.parentElement.parentElement.removeChild(this.parentElement);
+  localStorage.removeItem("wholeHistory");
+  if (myHistory.children.length < 1) {
+    myHistoryInfo.innerHTML = "There are no available history";
+    return;
+  }
+}
 
-myReset.addEventListener('click', ()=> {
-  console.log(this);
-})
-
-
+resets.forEach((reset) => {
+  reset.addEventListener("click", resetAll);
+});
 
