@@ -55,39 +55,37 @@ body {
 }
 
 .form {
-  align-items:center;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  margin: 0;
+  margin: 0 auto;
+  width: 100vw;
 }
 
 .form__button {
   display:flex;
-  justify-content: flex-end;
-  width: 70%;
-  padding: var(--main-padding);
+  justify-content: center;
+  width: 100%;
+  padding-bottom: var(--main-padding);
 }
 
 .form__content {
   
   background:white;
-  border-top: 20px solid black;
-  border-bottom: 20px solid black;
-  border-left: 40px solid black;
-  border-right: 40px solid black;
-  border-radius:36px;
   color: black;
-  display: flex;
-  height: 250px;
+  display:flex;
+  height: 300px;
   justify-content: center;
-  margin: var(--main-padding);
   padding: var(--main-padding);
-  width:70vw;
+  width:55vw;
 }
 
-.form__content:focus {
-  border:1px solid #9a031e;
+.form__frame {
+  align-items: center;
+  background-color: black;
+  border-radius:36px;
+  display:flex;
+  height: 400px;
+  justify-content: center;
+  margin:20px auto;
+  width: 70vw;
 }
 
 .history {
