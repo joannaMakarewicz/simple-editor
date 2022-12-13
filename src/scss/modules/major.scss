@@ -1,0 +1,34 @@
+.main {
+    width:100vw;
+    min-height: 100vh;
+    &__background {
+      background:white;
+      padding: var(--main-padding);
+    }
+    &__content {
+      padding: var(--main-padding) 0;
+      line-height: 1.5;
+      margin: 0;
+    }
+    &__header {
+      color: var(--main-color);
+      font-weight: 700;
+      padding-bottom: 0;
+      margin: 0;
+      &::before {
+        content: "⁂ ";
+        opacity: 0.5;
+      }
+    }
+    &__heading {
+      background-color: var(--additional-color);
+      padding: var(--main-padding);
+      text-align: center;
+      box-shadow:20px 20px 40px #c7bda7,
+      -20px -20px 40px #ffffff;
+    }
+    &__list {
+      margin: 0;
+      padding:0 16px;
+    }
+  }

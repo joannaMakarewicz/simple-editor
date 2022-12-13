@@ -50,14 +50,17 @@ if (localStorage.getItem("wholeHistory") !== null) {
 save.addEventListener("click", (e) => {
   myHistoryInfo.innerHTML = "";
   const actualHistory = `<div class="history__secondContainer history__secondContainer--js">
-  <img class="history__edit history__edit--js" src="simple-editor/edit.svg" />
-  <img class="history__reset history__reset--js" src="simple-editor/reset.svg" />
+  <img class="history__edit history__edit--js" src="edit.svg" />
+  <img class="history__reset history__reset--js" src="reset.svg" />
   <p class="history__date">${space.textContent}</p>
   <p class="history__information history__information--js">${myData.value}</p>
   </div>`;
-  myHistory.innerHTML += actualHistory;
+   myHistory.innerHTML += actualHistory; 
   localStorage.setItem("wholeHistory", myHistory.innerHTML);
   localStorage.removeItem("myTextarea");
+  if(myHistoryInfo.textContent==null){
+    alert('coś tam');
+  }
 });
 
 //reset single text from archive:

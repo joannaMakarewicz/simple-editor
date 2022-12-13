@@ -1,0 +1,54 @@
+.history {
+    background-color: var(--additional-color);
+    &__area {
+      color: var(--main-color);
+      margin: 0;
+      padding: var(--main-padding);
+      &__area::before {
+        content: "⁂ ";
+        opacity: 0.5;
+      }
+    }
+    &__date {
+      list-style: none;
+      font-size: smaller;
+      font-weight: bold;
+      padding: 0;
+      margin: 16px 0px;
+      width: 80vw;
+    }
+    &__edit {
+      left: 20%;
+      position:relative;
+      top:55%;
+      width: 25px;
+    }
+    &__date {
+      font-weight: 700;
+      margin:0;
+      padding:var(--main-padding);
+      }
+    &__info {
+      margin:0;
+      padding:var(--main-padding);
+    }
+    &__information {
+      grid-area: 2/3/3/4;
+      margin: 0;
+      padding-bottom: var(--main-padding);
+      padding-left: var(--main-padding);
+    }
+    &__secondContainer {
+      border-top: 1px solid red;
+      display:grid;
+      grid-template-columns: 40px 40px 1fr;
+      margin:0 auto;
+      width:90vw;
+    }
+    &__reset {
+      left: 20%;
+      position:relative;
+      top:55%;
+      width: 25px;
+    }
+  }

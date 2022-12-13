@@ -1,0 +1,39 @@
+.form {
+    background-image: url(../assets/img/background.png);
+    background-size: cover;
+    margin: 0 auto;
+    padding: 20px 0px;
+    width: 100vw;
+    &__button {
+      display:flex;
+      justify-content: center;
+      width: 100%;
+      padding-bottom: var(--main-padding);
+      z-index:1;
+    }
+    &__content { 
+      background:white;
+      color: black;
+      display:flex;
+      height: 290px;
+      justify-content: center;
+      outline: none;
+      padding: var(--main-padding);
+      width:58vw;
+      @media screen and (min-width:768px) {
+        margin: 30px 20vw;
+      }
+    }
+    &__frame {
+      align-items: center;
+      background-color: black;
+      border:1px solid white;
+      border-radius:36px;
+      box-shadow: 5px 5px 3px 5px #888888;
+      display:flex;
+      height: 400px;
+      justify-content: center;
+      margin:20px auto;
+      width: 70vw;
+    }
+  }
