@@ -13,10 +13,10 @@
     &__date {
       list-style: none;
       font-size: smaller;
-      font-weight: bold;
-      padding: 0;
-      margin: 16px 0px;
-      width: 80vw;
+      font-weight: 700;
+      padding:var(--main-padding);
+      margin: 0px;
+      width: 90%;
     }
     &__edit {
       left: 20%;
@@ -24,11 +24,6 @@
       top:55%;
       width: 25px;
     }
-    &__date {
-      font-weight: 700;
-      margin:0;
-      padding:var(--main-padding);
-      }
     &__info {
       margin:0;
       padding:var(--main-padding);
@@ -36,8 +31,9 @@
     &__information {
       grid-area: 2/3/3/4;
       margin: 0;
-      padding-bottom: var(--main-padding);
-      padding-left: var(--main-padding);
+      padding: var(--main-padding);
+      padding-top: 0;
+      width:90%;
     }
     &__secondContainer {
       border-top: 1px solid var(--main-color);

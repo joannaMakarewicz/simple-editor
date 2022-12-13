@@ -2,13 +2,12 @@
     background-image: url(../assets/img/background.png);
     background-size: cover;
     margin: 0 auto;
-    padding: 20px 0px;
+    padding: var(--main-padding) 0px 32px 0px;
     width: 100vw;
     &__button {
       display:flex;
       justify-content: center;
       width: 100%;
-      padding-bottom: var(--main-padding);
       z-index:1;
     }
     &__content { 
