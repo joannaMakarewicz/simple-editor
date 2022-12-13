@@ -64,6 +64,7 @@ body {
   justify-content: center;
   width: 100%;
   padding-bottom: var(--main-padding);
+  z-index:1;
 }
 
 .form__content {
@@ -71,22 +72,26 @@ body {
   background:white;
   color: black;
   display:flex;
-  height: 300px;
+  height: 290px;
   justify-content: center;
+  outline: none;
   padding: var(--main-padding);
-  width:55vw;
+  width:58vw;
 }
 
 .form__frame {
   align-items: center;
   background-color: black;
+  border:1px solid white;
   border-radius:36px;
+  box-shadow: 5px 5px 3px 5px #888888;
   display:flex;
   height: 400px;
   justify-content: center;
   margin:20px auto;
   width: 70vw;
 }
+
 
 .history {
   background-color: var(--additional-color);
