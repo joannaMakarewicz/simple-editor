@@ -4,7 +4,8 @@
       color: var(--main-color);
       margin: 0;
       padding: var(--main-padding);
-      &__area::before {
+      padding-bottom: 0;
+      &::before {
         content: "⁂ ";
         opacity: 0.5;
       }
@@ -39,7 +40,7 @@
       padding-left: var(--main-padding);
     }
     &__secondContainer {
-      border-top: 1px solid red;
+      border-top: 1px solid var(--main-color);
       display:grid;
       grid-template-columns: 40px 40px 1fr;
       margin:0 auto;

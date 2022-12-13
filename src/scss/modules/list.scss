@@ -1,5 +1,9 @@
 .list {
     margin-bottom: var(--main-padding);
+    &__bold {
+      margin-left: 3px;
+      margin-right: 3px;
+    }
     &__image {
       width: 25px;;
     }
