@@ -8,12 +8,18 @@ const space = document.querySelector(".date--js");
 
 function myDate() {
   const date = new Date();
-  const hour = date.getHours();
-  const minute = date.getMinutes();
-  const seconds = date.getSeconds();
-  const year = date.getFullYear();
-  const days = date.getDate();
-  const month = date.getMonth();
+  let hour = date.getHours();
+  hour = hour <= 9 ? '0' + hour : hour;
+  let minute = date.getMinutes();
+  minute = minute <= 9 ? '0' + minute : minute;
+  let seconds = date.getSeconds();
+  seconds = seconds <= 9 ? '0' + seconds : seconds;
+  let year = date.getFullYear();
+  year = year <= 9 ? '0' + year : year;
+  let days = date.getDate();
+  days = days <= 9 ? '0' + days : days;
+  let month = date.getMonth();
+  month = month <= 9 ? '0' + month : month;
   space.innerHTML =
     `${days}.${month}.${year}` + ", " + `${hour}:${minute}:${seconds}`;
 }
