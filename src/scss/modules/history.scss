@@ -31,6 +31,7 @@
     &__information {
       grid-area: 2/3/3/4;
       margin: 0;
+      overflow: visible;
       padding: var(--main-padding);
       padding-top: 0;
       width:90%;
@@ -40,6 +41,7 @@
       display:grid;
       grid-template-columns: 40px 40px 1fr;
       margin:0 auto;
+      min-height: 100%;
       width:90vw;
     }
     &__reset {

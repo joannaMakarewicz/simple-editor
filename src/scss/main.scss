@@ -27,6 +27,9 @@ body {
   margin:6px;
   padding: var(--main-padding);
   width: 100px;
+  &__special {
+    background: red;
+  }
 }
 
 .date {

@@ -58,9 +58,7 @@ save.addEventListener("click", (e) => {
    myHistory.innerHTML += actualHistory; 
   localStorage.setItem("wholeHistory", myHistory.innerHTML);
   localStorage.removeItem("myTextarea");
-  if(myHistoryInfo.textContent==null){
-    alert('coś tam');
-  }
+  save.classList.toggle('button__special');
 });
 
 //reset single text from archive:
